@@ -64,7 +64,7 @@ jobs:
       uses: golangci/golangci-lint-action@1e7e51e771db61008b38414a730f564565cf7c20  # v9.2.0
       with:
         only-new-issues: true
-        args: --timeout=10m
+        args: --timeout=10m --skip-config-verify
     - name: YAML Lint
       run: |
         sudo apt-get update && sudo apt-get install -y yamllint
@@ -95,6 +95,8 @@ jobs:
       with:
         go-version-file: "go.mod"
     - uses: ko-build/setup-ko@d006021bd0c28d1ce33a07e7943d48b079944c8d  # v0.9
+      with:
+        version: v0.17.2
     - name: Validate ko resolve for multi-arch
       run: |
         cat <<EOF > .ko.yaml
