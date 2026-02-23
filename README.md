@@ -16,7 +16,7 @@ cascade:
 
 Tekton Pruner manages the lifecycle of Tekton resources by automatically cleaning up completed PipelineRuns and TaskRuns based on configurable time-based (TTL) and history-based policies.
 
-> 📖 **For comprehensive architecture details, design decisions, and data flows, see [ARCHITECTURE.md](ARCHITECTURE.md)**
+> 📖 **For comprehensive architecture details, design decisions, and data flows, see [architecture.md](architecture.md)**
 
 ## Overview
 
@@ -27,7 +27,7 @@ Tekton Pruner provides event-driven and configuration-based cleanup through four
 - **TaskRun Controller**: Handles standalone TaskRun events
 
 <p align="center">
-<img src="docs/images/pruner_functional_abstract.png" alt="Tekton Pruner overview"></img>
+<img src="pruner_functional_abstract.png" alt="Tekton Pruner overview"></img>
 </p>
 
 ## Key Features
