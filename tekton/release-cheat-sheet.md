@@ -201,7 +201,7 @@ tkn --context dogfooding pipeline start pruner-release \
 
 ## Cherry-picking commits for patch releases
 
-The easiest way to cherry-pick a commit into a release branch is to use the "cherrypicker" plugin (see https://prow.tekton.dev/plugins for documentation).
+The easiest way to cherry-pick a commit into a release branch is to use the cherry-pick GitHub Actions workflow (see [cherry-pick-command.yaml](../.github/workflows/cherry-pick-command.yaml) for details).
 To use the plugin, comment "/cherry-pick <branch-to-cherry-pick-onto>" on the pull request containing the commits that need to be cherry-picked.
 Make sure this command is on its own line, and use one comment per branch that you're cherry-picking onto.
 Automation will create a pull request cherry-picking the commits into the named branch, e.g. `release-v0.3.x`.

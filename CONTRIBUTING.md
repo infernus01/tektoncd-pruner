@@ -3,7 +3,7 @@
 Thank you for contributing your time and expertise to Tekton. This
 document describes the contribution guidelines for the project.
 
-**Note:** Before you start contributing, you must read and abide by our **[Code of Conduct](./code-of-conduct.md)**.
+**Note:** Before you start contributing, you must read and abide by our **[Code of Conduct](https://github.com/tektoncd/community/blob/main/code-of-conduct.md)**.
 
 
 ## Contributing to Tekton code
@@ -22,16 +22,15 @@ To set up your environment and begin working on our code, see [Developing for Te
   - [Proposing new features](https://github.com/tektoncd/community/tree/main/process#proposing-features)
   - [Performing code reviews](https://github.com/tektoncd/community/tree/main/process#reviews)
   - [Becoming a community member and maintainer](https://github.com/tektoncd/community/blob/main/process/contributor-ladder.md)
-- [Making changes to the Tekton API](api_compatibility_policy.md#approving-api-changes)
+- [Making changes to the Tekton API](https://github.com/tektoncd/pipeline/blob/main/api_compatibility_policy.md#approving-api-changes)
 - [Understanding the Tekton automation infrastructure](https://github.com/tektoncd/plumbing)
 
 Additionally, please read the following resources specific to Tekton Pipelines:
 
-- [Tekton Pipelines GitHub project](https://github.com/orgs/tektoncd/projects/3)
-- [Tekton Pipelines roadmap](roadmap.md)
-- [Tekton Pipelines API compatibility policy](api_compatibility_policy.md)
+- [Tekton Pipelines roadmap](https://github.com/tektoncd/pipeline/blob/main/roadmap.md)
+- [Tekton Pipelines API compatibility policy](https://github.com/tektoncd/pipeline/blob/main/api_compatibility_policy.md)
 
-For support in contributing to specific areas, contact the relevant [Tekton Pipelines Topical Owner(s)](topical-ownership.md). 
+For support in contributing to specific areas, contact the relevant [Tekton Pipelines Topical Owner(s)](https://github.com/tektoncd/pipeline/blob/main/topical-ownership.md). 
 
 ## Contributing to Tekton documentation
 

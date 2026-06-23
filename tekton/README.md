@@ -7,8 +7,8 @@ repos!_
 We use Tekton Pipelines to build, test and release Tekton Pruner!
 
 This directory contains the
-[`Tasks`](https://github.com/tektoncd/pipeline/blob/master/docs/tasks.md) and
-[`Pipelines`](https://github.com/tektoncd/pipeline/blob/master/docs/pipelines.md)
+[`Tasks`](https://github.com/tektoncd/pipeline/blob/main/docs/tasks.md) and
+[`Pipelines`](https://github.com/tektoncd/pipeline/blob/main/docs/pipelines.md)
 that we use.
 
 The Pipelines and Tasks in this folder are used for:
@@ -17,9 +17,9 @@ The Pipelines and Tasks in this folder are used for:
 
 To start from scratch and use these Pipelines and Tasks:
 
-1. [Install Tekton](https://github.com/tektoncd/pipeline/blob/master/tekton/README.md#install-tekton)
-1. [Setup the Tasks and Pipelines](https://github.com/tektoncd/pipeline/blob/master/tekton/README.md#install-tasks-and-pipelines)
-1. [Create the required service account + secrets](https://github.com/tektoncd/pipeline/blob/master/tekton/README.md#service-account-and-secrets)
+1. [Install Tekton](https://github.com/tektoncd/pipeline/blob/main/tekton/README.md#install-tekton)
+1. [Setup the Tasks and Pipelines](https://github.com/tektoncd/pipeline/blob/main/tekton/README.md#install-tasks-and-pipelines)
+1. [Create the required service account + secrets](https://github.com/tektoncd/pipeline/blob/main/tekton/README.md#service-account-and-secrets)
 
 ## Create an official release
 

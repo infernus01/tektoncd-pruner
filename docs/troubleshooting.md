@@ -65,10 +65,10 @@ kubectl get configmap tekton-pruner-default-spec -n tekton-pipelines -o jsonpath
 1. Verify RBAC Configuration
 ```bash
 # Check ClusterRole
-kubectl get clusterrole tekton-pruner-controller
+kubectl get clusterrole tekton-pruner-controller-cluster-access
 
 # Check ClusterRoleBinding
-kubectl get clusterrolebinding tekton-pruner-controller
+kubectl get clusterrolebinding tekton-pruner-controller-cluster-access
 
 # Check ServiceAccount
 kubectl get serviceaccount tekton-pruner-controller -n tekton-pipelines

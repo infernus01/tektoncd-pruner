@@ -49,7 +49,7 @@ You must install these tools:
 
 ## Kubernetes cluster
 
-To setup a Kubernetes cluster for development, see the Tekton Pipelines [documentation](https://github.com/tektoncd/pipeline/blob/master/DEVELOPMENT.md#kubernetes-cluster).
+To setup a Kubernetes cluster for development, see the Tekton Pipelines [documentation](https://github.com/tektoncd/pipeline/blob/main/DEVELOPMENT.md#kubernetes-cluster).
 
 ## Environment Setup
 

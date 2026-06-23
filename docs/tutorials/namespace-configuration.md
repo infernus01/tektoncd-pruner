@@ -21,7 +21,7 @@ Set `enforcedConfigLevel: namespace` in global config to enable namespace-level 
 > 
 > **FORBIDDEN namespaces** (validation will reject):
 > - System: `kube-*`, `openshift-*`
-> - Tekton controllers: `tekton-pipelines`, `tekton-*`
+> - Tekton controllers: `tekton-pipelines`, `tekton-operator`
 >
 > **Required labels** for all configs:
 > ```yaml
@@ -144,6 +144,9 @@ kind: ConfigMap
 metadata:
   name: tekton-pruner-namespace-spec
   namespace: my-app
+  labels:
+    app.kubernetes.io/part-of: tekton-pruner
+    pruner.tekton.dev/config-type: namespace
 data:
   ns-config: |
     ttlSecondsAfterFinished: 2592001   # Invalid: exceeds system maximum
@@ -160,8 +163,9 @@ data:
     successfulHistoryLimit: 20         # Admin limit: 20 runs
     namespaces:
       development:
-        ttlSecondsAfterFinished: 3600   # Valid: within global limit
-        ttlSecondsAfterFinished: 172800 # Invalid: exceeds global limit
+        ttlSecondsAfterFinished: 3600   # Valid: within admin limit (86400)
+      staging:
+        ttlSecondsAfterFinished: 172800 # Invalid: exceeds admin limit (86400)
 ```
 
 ## Configuration Inheritance
@@ -198,8 +202,8 @@ data:
   ns-config: |
     pipelineRuns:
       - selector:
-        - matchLabels:
-            critical: "true"
+          - matchLabels:
+              critical: "true"
         ttlSecondsAfterFinished: 2592000
 ```
 
@@ -211,8 +215,8 @@ data:
       production:
         pipelineRuns:
           - selector:
-            - matchLabels:
-                critical: "true"
+              - matchLabels:
+                  critical: "true"
 ```
 
 For selector-based resource groups, use separate namespace ConfigMaps (Method 2).

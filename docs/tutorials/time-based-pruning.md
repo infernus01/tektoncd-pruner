@@ -73,12 +73,12 @@ data:
     ttlSecondsAfterFinished: 3600
     pipelineRuns:
       - selector:
-        - matchLabels:
-            pipeline-type: release
+          - matchLabels:
+              pipeline-type: release
         ttlSecondsAfterFinished: 604800
       - selector:
-        - matchLabels:
-            pipeline-type: test
+          - matchLabels:
+              pipeline-type: test
         ttlSecondsAfterFinished: 300
 ```
 

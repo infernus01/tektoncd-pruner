@@ -16,7 +16,7 @@ This tutorial walks you through installing Tekton Pruner and creating your first
 ## Installation
 
 ```bash
-kubectl apply -f https://raw.githubusercontent.com/tektoncd/pruner/main/release.yaml
+kubectl apply -f https://github.com/tektoncd/pruner/releases/latest/download/release.yaml
 kubectl get pods -n tekton-pipelines -l app=tekton-pruner-controller
 ```
 
@@ -67,7 +67,7 @@ Create test PipelineRuns to verify pruning:
 ```bash
 # Create a simple pipeline
 kubectl apply -f - <<EOF
-apiVersion: tekton.dev/v1beta1
+apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata:
   name: hello-pipeline
@@ -85,7 +85,7 @@ EOF
 # Create multiple runs
 for i in {1..5}; do
   kubectl create -f - <<EOF
-apiVersion: tekton.dev/v1beta1
+apiVersion: tekton.dev/v1
 kind: PipelineRun
 metadata:
   generateName: hello-pipeline-run-
@@ -107,7 +107,7 @@ kubectl get pipelineruns -w
 | `successfulHistoryLimit` | Keep N successful runs | `3` |
 | `failedHistoryLimit` | Keep N failed runs | `3` |
 | `historyLimit` | Keep N runs (both types) | `5` |
-| `enforcedConfigLevel` | Config hierarchy level | `global` or `namespace` |
+| `enforcedConfigLevel` | Config hierarchy level | `global`, `namespace`, or `resource` |
 
 ## Next Steps
 

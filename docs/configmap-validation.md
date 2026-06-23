@@ -121,7 +121,7 @@ Namespace config must be named 'tekton-pruner-namespace-spec', got: pruner-confi
 
 **Forbidden namespaces for namespace-level configs:**
 - System namespaces: `kube-*`, `openshift-*`
-- Tekton namespaces: `tekton-pipelines`, `tekton-*`
+- Tekton namespaces: `tekton-pipelines`, `tekton-operator`
 
 Attempting to create a namespace-level config in these locations will be rejected.
 
@@ -199,7 +199,7 @@ kubectl delete cm tekton-pruner-default-spec -n tekton-pipelines
 
 ```bash
 # Check webhook configuration
-kubectl get validatingwebhookconfigurations tekton-pruner-validating-webhook
+kubectl get validatingwebhookconfigurations validation.webhook.pruner.tekton.dev
 
 # Check webhook pod and service
 kubectl get pods,svc -n tekton-pipelines -l app.kubernetes.io/component=webhook

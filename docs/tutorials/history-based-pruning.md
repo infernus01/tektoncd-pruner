@@ -82,13 +82,13 @@ data:
     successfulHistoryLimit: 3
     pipelineRuns:
       - selector:
-        - matchLabels:
-            critical: "true"
+          - matchLabels:
+              critical: "true"
         successfulHistoryLimit: 20
         failedHistoryLimit: 30
       - selector:
-        - matchLabels:
-            pipeline-type: test
+          - matchLabels:
+              pipeline-type: test
         successfulHistoryLimit: 3
         failedHistoryLimit: 5
 ```
@@ -116,7 +116,9 @@ If you want to keep N runs regardless of age, **don't set a TTL** - just use his
 ```bash
 # Check retained runs by status
 kubectl get pr -l tekton.dev/pipeline=<name> --field-selector status.conditions[0].status=True
-kubectl get pr -l tekton.dev/pipeline=<name> --field-selector status.conditions[0].status=False# Monitor pruning
+kubectl get pr -l tekton.dev/pipeline=<name> --field-selector status.conditions[0].status=False
+
+# Monitor pruning
 kubectl logs -n tekton-pipelines -l app=tekton-pruner-controller | grep "history"
 ```
 

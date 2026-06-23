@@ -34,9 +34,9 @@ data:
   ns-config: |
     pipelineRuns:
       - selector:
-        - matchLabels:
-            environment: production
-            tier: frontend
+          - matchLabels:
+              environment: production
+              tier: frontend
         ttlSecondsAfterFinished: 604800
         successfulHistoryLimit: 10
 ```
@@ -47,8 +47,8 @@ data:
   ns-config: |
     pipelineRuns:
       - selector:
-        - matchAnnotations:
-            tekton.dev/release: "true"
+          - matchAnnotations:
+              tekton.dev/release: "true"
         ttlSecondsAfterFinished: 2592000
 ```
 
@@ -58,10 +58,10 @@ data:
   ns-config: |
     pipelineRuns:
       - selector:
-        - matchLabels:
-            app: myapp
-          matchAnnotations:
-            critical: "true"
+          - matchLabels:
+              app: myapp
+            matchAnnotations:
+              critical: "true"
         successfulHistoryLimit: 50
 ```
 
@@ -82,16 +82,16 @@ data:
     ttlSecondsAfterFinished: 3600
     pipelineRuns:
       - selector:
-        - matchLabels:
-            pipeline-type: build
+          - matchLabels:
+              pipeline-type: build
         ttlSecondsAfterFinished: 300
       - selector:
-        - matchLabels:
-            pipeline-type: test
+          - matchLabels:
+              pipeline-type: test
         ttlSecondsAfterFinished: 3600
       - selector:
-        - matchLabels:
-            pipeline-type: release
+          - matchLabels:
+              pipeline-type: release
         ttlSecondsAfterFinished: 604800
         successfulHistoryLimit: 20
 ```
@@ -102,16 +102,16 @@ data:
   ns-config: |
     pipelineRuns:
       - selector:
-        - matchLabels:
-            env: dev
+          - matchLabels:
+              env: dev
         ttlSecondsAfterFinished: 300
       - selector:
-        - matchLabels:
-            env: staging
+          - matchLabels:
+              env: staging
         ttlSecondsAfterFinished: 86400
       - selector:
-        - matchLabels:
-            env: prod
+          - matchLabels:
+              env: prod
         ttlSecondsAfterFinished: 604800
 ```
 
@@ -121,13 +121,13 @@ data:
   ns-config: |
     pipelineRuns:
       - selector:
-        - matchLabels:
-            critical: "true"
+          - matchLabels:
+              critical: "true"
         ttlSecondsAfterFinished: 2592000
         successfulHistoryLimit: 50
       - selector:
-        - matchLabels:
-            critical: "false"
+          - matchLabels:
+              critical: "false"
         ttlSecondsAfterFinished: 3600
         successfulHistoryLimit: 3
 ```
@@ -141,17 +141,17 @@ data:
   ns-config: |
     pipelineRuns:
       - selector:
-        - matchLabels:
-            env: prod
-            critical: "true"
+          - matchLabels:
+              env: prod
+              critical: "true"
         ttlSecondsAfterFinished: 2592000
       - selector:
-        - matchLabels:
-            env: prod
+          - matchLabels:
+              env: prod
         ttlSecondsAfterFinished: 604800
       - selector:
-        - matchLabels:
-            app: myapp
+          - matchLabels:
+              app: myapp
         ttlSecondsAfterFinished: 3600
 ```
 
@@ -172,18 +172,18 @@ data:
   ns-config: |
     pipelineRuns:
       - selector:
-        - matchLabels:
-            tier: frontend
+          - matchLabels:
+              tier: frontend
         ttlSecondsAfterFinished: 604800
         successfulHistoryLimit: 10
       - selector:
-        - matchLabels:
-            tier: backend
+          - matchLabels:
+              tier: backend
         ttlSecondsAfterFinished: 1209600
         successfulHistoryLimit: 15
       - selector:
-        - matchLabels:
-            tier: database
+          - matchLabels:
+              tier: database
         ttlSecondsAfterFinished: 2592000
         successfulHistoryLimit: 30
 ```
@@ -195,16 +195,16 @@ data:
   ns-config: |
     pipelineRuns:
       - selector:
-        - matchLabels:
-            release-type: feature
+          - matchLabels:
+              release-type: feature
         ttlSecondsAfterFinished: 604800
       - selector:
-        - matchLabels:
-            release-type: hotfix
+          - matchLabels:
+              release-type: hotfix
         ttlSecondsAfterFinished: 2592000
       - selector:
-        - matchLabels:
-            release-type: major
+          - matchLabels:
+              release-type: major
         ttlSecondsAfterFinished: 7776000
 ```
 
@@ -213,7 +213,7 @@ data:
 Add labels to PipelineRuns for grouping:
 
 ```yaml
-apiVersion: tekton.dev/v1beta1
+apiVersion: tekton.dev/v1
 kind: PipelineRun
 metadata:
   generateName: my-pipeline-
